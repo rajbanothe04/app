@@ -1,0 +1,17 @@
+
+Database Name= ci_test
+
+Table name = articles
+
+1 id int(10)  UNSIGNED  AUTO_INCREMENT PRIMARY KEY
+2 title varchar(255)
+3 body varchar(255)
+4 user_id int(10)
+
+Table name = users
+
+1 idPrimary int(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY
+2 uname varchar(255)
+3 pword varchar(255)
+4 fname varchar(100)
+5 lname varchar(100)
