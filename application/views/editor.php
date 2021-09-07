@@ -1,3 +1,4 @@
+<?php include_once('admin/admin_header.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,38 +8,74 @@
     <!-- Make sure the path to CKEditor is correct. -->
     <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/bootstrap.min.css'); ?>">
     <script src="<?= base_url('ckeditor/ckeditor.js') ?>"></script>
+    <script src="<?= base_url('ckeditor/ckfinder.js') ?>"></script>
+    <script src="<?= base_url('assets/js/bootstrap.min.js'); ?>"></script>
+    <script src="<?= base_url('assets/jq/jquery.js'); ?>"></script>
 </head>
 
 <body>
-    <div class="container">
-     <form action="">
-         <div><hr>
-         <label><h3><b>Title</b></h3></label><br>
-         <input type="text" name="Article" id="title" size="164">
-         </div>
-         <hr>
-        <textarea name=" editor1" id="editor1" rows="10" cols="80">
-            Write here your code.....
+    <marquee scrollamount="10">
+        <i>
+            <h4 style="color:blue;">Welcome to MyApp Portal. You can add Menu dynamically from here
+        </i></h4>
+    </marquee>
+    <div class="container mt-4">
+        <center>
+            <div class="ani">
+                <i><b>
+                        <h3 style="color:green;"><?= $this->session->flashdata('msg'); ?></h3>
+                    </b></i>
+            </div>
+        </center>
+        <div class="log">
+            <a href="<?= base_url('user') ?>"><?php echo form_submit(['name' => 'sumbit', 'value' => 'Home', 'class' => 'btn btn-primary']); ?>
+            </a>
+            &nbsp;
+            <a href="<?= base_url('user/logout') ?>"><?php echo form_submit(['name' => 'sumbit', 'value' => 'Logout', 'class' => 'btn btn-primary']); ?>
+            </a>
+        </div>
+
+        <?php echo form_open('user/save_data', ['class' => 'form-horizontal']); ?>
+        <div>
+            <label>
+                <h3><b>Menu Name</b></h3>
+            </label><br>
+            <input type="text" name="menu_name" id="page" size="50">
+            <?php echo form_error('menu_name'); ?>
+        </div>
+        <hr>
+        <textarea name="content" id="editor1" rows="10" cols="80">
+            Write your content here....
         </textarea>
         <script>
         // Replace the <textarea id="editor1"> with a CKEditor 4
         // instance, using default configuration.
-        CKEDITOR.replace('editor1');
+        var editor = CKEDITOR.replace('editor1', {
+            filebrowserBrowseUrl: '/ckfinder/ckfinder.html',
+            filebrowserImageBrowseUrl: '/ckfinder/ckfinder.html?type=Images',
+            filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files'
+        });
+        // CKFinder.setupCKEditor(editor); // this code used for image upload
         </script>
-        <input type="submit" class="publish_btn" name="submit_data" value="Publish">
-     </form>
+
+
+        <?php echo form_submit(['name' => 'sumbit', 'value' => 'Publish', 'class' => 'btn btn-primary']); ?>
+        </form>
     </div>
+
 </body>
 <style>
-.publish_btn
-{
-width: 100%;
-padding: 10px;
-background-color: rgb(30, 69, 79);
-color: white;
-cursor: pointer;
-font-size: 20px;
+.log {
+    position: relative;
+    float: right;
 }
-
 </style>
+<script>
+$(document).ready(function() {
+    setTimeout(function() {
+        $(".ani").fadeOut("slow");
+    }, 3000);
+});
+</script>
+
 </html>

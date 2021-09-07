@@ -18,10 +18,4 @@ class Loginmodel extends CI_Model
 			return FALSE;
 		}
 	}
-	// 	public function __construct()
-	// 	{
-	// 		parent::__construct();					// for database load
-	// 		$this->load->database();
-	// 	}         
-
 }

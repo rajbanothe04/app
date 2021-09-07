@@ -12,29 +12,25 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav navbar-right ">
                 <li>
-                    <a class="navbar-brand" href="<?= base_url('user') ?>">Articles</a>
+                    <a class="navbar-brand" href="<?= base_url('user') ?>">Home</a>
                 </li>
             </ul>
-            <a class="navbar-brand">Admin Panel</a>
+            <!-- <a class="navbar-brand">Admin Panel</a> -->
             <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
                 aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button> -->
-            <ul class="nav navbar-nav navbar-right">
-                <!-- <li>
-                    <a class="navbar-brand" href="<?= base_url('user') ?>">Home</a>
-                </li> -->
+            <!-- <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a class="navbar-brand" href="<?= base_url('login/logout') ?>">Logout</a>
-                    <!-- <?php anchor('login/logout', 'Logout') ?> -->
+                    <a class="navbar-brand" href="<?= base_url('home') ?>">Home</a>
                 </li>
                 <li>
-                    <a class="navbar-brand" href="<?= base_url('user/user_detils')  ?>">My Profile</a>
+                    <a class="navbar-brand" href="<?= base_url('user/logout') ?>">Logout</a>
+                    <?php anchor('login/logout', 'Logout') ?>
                 </li>
-
-            </ul>
+            </ul> -->
 
 
 
