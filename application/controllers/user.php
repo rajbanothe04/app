@@ -10,9 +10,8 @@ class User extends CI_Controller
 		// print_r($data);
 		// echo "</pre>";
 		// exit;
-
-
-		$page_content = "";
+		$page_content = $data[0]->content;
+		// $this->loadTitle();
 		$this->load->view('public/home', compact('data', 'page_content'));
 	}
 	public function login()
@@ -100,16 +99,15 @@ class User extends CI_Controller
 	}
 	public function loadTitle()
 	{
-		// $this->load->helper('array');
 		$page_id = $this->input->get()['id'];
 		$this->load->model('data_model');
 		$data = $this->data_model->get_menu();
 		// $random  = random_element($data);
 		// echo "<pre>";
-		// print_r($page_content);
+		// print_r($data);
 		// echo "</pre>";
 		// exit;
-		$page_content = "";
+		$page_content = $data[0]->content;
 		foreach ($data as $value) {
 			if ($value->id === $page_id) {
 				$page_content = $value->content;

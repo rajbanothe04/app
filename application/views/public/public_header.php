@@ -41,7 +41,7 @@
                         endforeach;
                     }
                     echo '</div>
-                      </div>
+                        </div>
                         </li>';
 
                 endforeach;
