@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel</title>
     <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/bootstrap.min.css'); ?>">
+    <script src="<?= base_url('assets/icons/font_awesome.js'); ?>"></script>
 </head>
 
 <body>
@@ -14,7 +15,8 @@
         <div class="container-fluid">
             <ul class="nav navbar-nav navbar-right ">
                 <li>
-                    <a class="navbar-brand" href="<?= base_url('user') ?>">Home</a>
+                    <a class="navbar-brand" href="<?= base_url('user') ?>"><i class=" fas fa-home fa-lg
+                        text-white"></i>Home</a>
                 </li>
             </ul>
             <!-- <a class="navbar-brand">Admin Panel</a> -->

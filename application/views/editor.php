@@ -16,7 +16,8 @@
 <body>
     <marquee scrollamount="10">
         <i>
-            <h4 style="color:blue;">Welcome to MyApp Portal. You can add Menu dynamically from here
+            <h4 style="color:blue;">Welcome to MyApp Portal. You can add <sapan style="color:red;">Menu</sapan>
+                dynamically from here
         </i></h4>
     </marquee>
     <div class="container mt-4">
@@ -28,8 +29,11 @@
             </div>
         </center>
         <div class="log">
-            <a href="<?= base_url('user') ?>"><?php echo form_submit(['name' => 'sumbit', 'value' => 'Home', 'class' => 'btn btn-primary']); ?>
-            </a>
+            <a href="<?= base_url('user/load_submenu') ?>"><span style="color:green"><i
+                        class="fas fa-plus-square fa-lg">
+                        Add Sub-menu
+                    </i></span></a>&nbsp;
+            <!-- <?php echo form_submit(['name' => 'sumbit', 'value' => 'Add Sub-menu', 'class' => 'btn btn-primary']); ?> -->
             &nbsp;
             <a href="<?= base_url('user/logout') ?>"><?php echo form_submit(['name' => 'sumbit', 'value' => 'Logout', 'class' => 'btn btn-primary']); ?>
             </a>
@@ -79,3 +83,4 @@ $(document).ready(function() {
 </script>
 
 </html>
+<?php include_once('admin/admin_footer.php'); ?>
